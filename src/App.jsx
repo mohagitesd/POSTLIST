@@ -3,12 +3,18 @@ import "./App.css";
 import PostsList from "./PostsList";
 import PostDetail from "./PostDetail";
 import useFetch from "./useFetch";
+//import { useNavigate } from "react-router";
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
 function App() {
   const { data, loading, error } = useFetch(url);
   const [selectedPostId, setSelectedPostId] = useState(null);
+  //const navigate = useNavigate();
+  /*const handleClick = () => {
+    // navigation vers la page de détail avec l’ID du produit
+    navigate(`/posts/${id}`);
+  };*/
 
   if (loading) {
     return <div className="loading">Chargement...</div>;
